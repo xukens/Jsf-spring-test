@@ -1,0 +1,15 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:composite="http://java.sun.com/jsf/composite">
+<composite:interface>
+    <composite:attribute name="car"/>
+</composite:interface>
+<composite:implementation>
+    <ui:fragment rendered="#{cc.attrs.car.type=='CAR'}">
+        <h3>Car</h3>
+        #{cc.attrs.car.name}
+    </ui:fragment>
+</composite:implementation>
+</html>

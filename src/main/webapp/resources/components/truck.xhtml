@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:composite="http://java.sun.com/jsf/composite">
+<composite:interface>
+    <composite:attribute name="car" type="com.journaldev.jsfspring.Car"/>
+</composite:interface>
+<composite:implementation>
+    <ui:fragment rendered="#{cc.attrs.car.type.toString() =='TRUCK'}">
+
+            <h3>Truck</h3>
+            #{cc.attrs.car.name}
+            <h:selectOneMenu value="#{cc.attrs.car.speed}"
+                             onchange="submit()">
+                <f:selectItems value="#{carBean.speedList()}" var="speed" itemLabel="#{speed}"
+                               itemValue="#{speed}"></f:selectItems>
+            </h:selectOneMenu>
+
+    </ui:fragment>
+</composite:implementation>
+</html>
